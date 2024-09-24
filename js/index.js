@@ -1,3 +1,4 @@
+/****************************Navbar***************************************/
 const navbar = document.getElementById("navbar");
 const sticky = navbar.offsetTop;
 function makeNavbarSticky() {
@@ -9,10 +10,12 @@ function makeNavbarSticky() {
 }
 window.addEventListener("scroll", makeNavbarSticky);
 
+/****************************Blog Page Redirect***************************************/
 const blogPage = document.getElementById("blogPage");
 blogPage.addEventListener("click", function () {
   window.location.href = "./blog.html";
 });
+/****************************Reusable Function***************************************/
 function currentBalance(id) {
   let balance = document.getElementById(id).innerHTML;
   let convertBalance = parseFloat(balance);
@@ -31,6 +34,7 @@ function donationBalnce(id) {
   return convertDonation;
 }
 
+/**************************** Reusable Card ***************************************/
 function handleDonationCard(
   donationId,
   donationBalanceId,
@@ -72,10 +76,12 @@ function handleDonationCard(
       donationInput.value = "";
       modalAmount.innerHTML = `${donationPlace} BDT ${donationAmount} `;
 
+      /************* Date *******************/
       const currentTime = new Date();
       const date = currentTime.getDate();
       const month = currentTime.getMonth() + 1;
       const year = currentTime.getFullYear();
+      /************* Time *******************/
       const time = new Date().toLocaleTimeString();
 
       const formateDateTime = `
@@ -94,7 +100,8 @@ function handleDonationCard(
   });
 }
 
-
+/*******************************************************************/
+// 1st card
 handleDonationCard(
   "FristDonate",
   "donation-balnce-one",
@@ -102,7 +109,7 @@ handleDonationCard(
   "title1",
   "place1"
 );
-
+// 2nd card
 handleDonationCard(
   "secoundDonate",
   "donation-balnce-two",
@@ -110,7 +117,7 @@ handleDonationCard(
   "title2",
   "place2"
 );
-
+// 3rd card
 handleDonationCard(
   "thirdDonate",
   "donation-balnce-three",
@@ -118,7 +125,7 @@ handleDonationCard(
   "title3",
   "place3"
 );
-
+// 4th card
 handleDonationCard(
   "fourthDonate",
   "donation-balnce-fourth",
